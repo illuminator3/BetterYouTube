@@ -1,0 +1,17 @@
+  {
+    "name": "BetterYouTube",
+    "version": "1",
+    "description": "Enhances your YouTube experience",
+    "manifest_version": 2,
+    "permissions": [
+        "tabs",
+        "*://*.youtube.com/*"
+    ],
+    "content_scripts": [
+        {
+          "matches": ["*://*.youtube.com/*"],
+          "js": ["youtube.js", "script.js"],
+          "css": ["style.css"]
+        }
+    ]
+}
