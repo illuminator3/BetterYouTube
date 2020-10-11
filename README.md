@@ -14,4 +14,4 @@ BetterYouTube is a Chrome Extension that enhances your YouTube experience. For a
 
 ## Installation
 
-Installing BetterYouTube is fairly simple, you'd go as usual with installing an unpacked chrome extension, an example of this can be found [here](https://github.com/web-scrobbler/web-scrobbler/wiki/Install-an-unpacked-extension)
+Installing BetterYouTube is fairly simple, you'd go as usual with installing an unpacked chrome extension, an example of this can be found [here](https://github.com/web-scrobbler/web-scrobbler/wiki/Install-an-unpacked-extension).
