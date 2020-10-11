@@ -227,9 +227,9 @@ function $(handler, timeout = 0)
 let ythandlertimeout = 125
 
 const ythandler = () => {
-    console.log("Checking for ytd-app")
+    console.log("Checking if page has been loaded yet")
 
-    if (elementTagExists("ytd-app"))
+    if (document.readyState === "complete" && elementTagExists("ytd-app"))
     {
         console.log("Running injection")
 
@@ -239,7 +239,7 @@ const ythandler = () => {
     }
     else
     {
-        console.error("Couldn't find yt app. Retrying in +=10ms")
+        console.error("Page hasn't been loaded yet. Retrying in +=10ms")
 
         ythandlertimeout += 10
 
