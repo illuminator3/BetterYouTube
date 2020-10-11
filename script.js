@@ -32,7 +32,7 @@ $({
     main: {
         enable: () => {
             $(remove("footer"))
-            $(elementTag("ytd-guide-collapsible-entry-renderer")[0].remove())
+            $(elementClass("style-scope ytd-guide-collapsible-section-entry-renderer")[7].remove())
 
             $(() => {
                 const e = elementClass("style-scope ytd-guide-renderer")
