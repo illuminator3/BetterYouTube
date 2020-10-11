@@ -36,11 +36,9 @@ $({
 
             $(() => {
                 const e = elementClass("style-scope ytd-guide-renderer")
-                const a = e[6]
                 const b = e[3]
                 const c = e[7]
 
-                a.remove()
                 b.remove()
                 c.remove()
             })
