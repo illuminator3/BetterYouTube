@@ -116,13 +116,20 @@ $({
         $(remove("country-code"))
 
         $(() => {
-            const e = elementClass("style-scope ytd-notification-topbar-button-renderer notification-button-style-type-default")
-            const u = e[0]
-            const c = u.children
-            const f = c[0]
+            try
+            {
+                const e = elementClass("style-scope ytd-notification-topbar-button-renderer notification-button-style-type-default")
+                const u = e[0]
+                const c = u.children
+                const f = c[0]
 
-            f.click()
-            f.click()
+                f.click()
+                f.click()
+            } catch (e)
+            {
+                // sometimes happens
+                console.error(e)
+            }
         })
     }
 })
