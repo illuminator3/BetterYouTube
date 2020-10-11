@@ -11,6 +11,7 @@ BetterYouTube is a Chrome Extension that enhances your YouTube experience. For a
 * Removes all clarify boxes
 * Makes the tags look better
 * Removes the country code
+* Automatically "reads" your notifications
 
 ## Installation
 
