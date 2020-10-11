@@ -57,7 +57,7 @@ function elementIdExists(id)
 
 function elementTagExists(tag)
 {
-    return elementTag(tag) != null
+    return elementTag(tag).length >= 1
 }
 
 //=================================================================
