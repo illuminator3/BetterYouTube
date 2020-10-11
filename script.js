@@ -55,7 +55,9 @@ $({
                 elementTag("ytd-expander")[0].removeAttribute("collapsed")
 
                 const c = elementClass("less-button style-scope ytd-video-secondary-info-renderer")
-                c[0].remove()
+
+                if (c.length === 1)
+                    c[0].remove()
             })
 
             $(() => {
@@ -77,6 +79,9 @@ $({
 
             $(() => {
                 const e = elementId("owner-sub-count")
+
+                if (e == null) return
+
                 const t = e.textContent
 
                 e.remove()
@@ -116,20 +121,16 @@ $({
         $(remove("country-code"))
 
         $(() => {
-            try
-            {
-                const e = elementClass("style-scope ytd-notification-topbar-button-renderer notification-button-style-type-default")
-                const u = e[0]
-                const c = u.children
-                const f = c[0]
+            const e = elementClass("style-scope ytd-notification-topbar-button-renderer notification-button-style-type-default")
 
-                f.click()
-                f.click()
-            } catch (e)
-            {
-                // sometimes happens
-                console.error(e)
-            }
+            if (e.length <= 0) return
+
+            const u = e[0]
+            const c = u.children
+            const f = c[0]
+
+            f.click()
+            f.click()
         })
     }
 })
