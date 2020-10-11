@@ -119,16 +119,18 @@ $({
         $(remove("country-code"))
 
         $(() => {
-            const e = elementClass("style-scope ytd-notification-topbar-button-renderer notification-button-style-type-default")
+            const f = () => {
+                if (elementTagExists("ytd-notification-topbar-button-renderer"))
+                {
+                    const e = elementTag("ytd-notification-topbar-button-renderer")
+                    const u = e[0]
 
-            if (e.length <= 0) return
+                    u.remove()
+                }
+                else setInterval(f, 10)
+            }
 
-            const u = e[0]
-            const c = u.children
-            const f = c[0]
-
-            f.click()
-            f.click()
+            f()
         })
     }
 })
