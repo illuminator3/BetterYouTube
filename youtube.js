@@ -160,7 +160,7 @@ function checkPage()
     return PAGE_TYPE.MAIN
 }
 
-const page = checkPage()
+let page = checkPage()
 
 //=================================================================
 
@@ -169,7 +169,7 @@ function $(handler, timeout = 0)
     setTimeout(() => {
         if (!yt.initialized)
         {
-            console.log("Initializing $yt handler")
+            console.log("Initializing $yt")
 
             if (handler instanceof Function)
             {
@@ -248,3 +248,37 @@ const ythandler = () => {
 }
 
 setTimeout(ythandler, ythandlertimeout)
+
+//=================================================================
+
+function onPageChange()
+{
+    console.log("Detected page change")
+
+    page = checkPage()
+
+    console.log("Reinjecting $yt")
+
+    yt.initialized = false
+
+    $(yt)
+
+    console.log("Restarting ythandler")
+
+    ythandlertimeout = 7000
+
+    setTimeout(ythandler, ythandlertimeout)
+}
+
+let lastLocation = window.location.href
+
+const pageObserver = () => {
+    const loc = window.location.href
+
+    if (lastLocation !== loc)
+        onPageChange()
+
+    lastLocation = loc
+}
+
+setInterval(pageObserver, 100)
